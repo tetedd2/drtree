@@ -1,6 +1,6 @@
 
 // กำหนด URL ของโมเดล Teachable Machine
-const URL = "https://teachablemachine.withgoogle.com/models/GAu0Um0vr/";  
+const URL = "https://teachablemachine.withgoogle.com/models/2W4npTTEM/";  
 let model, labelContainer, maxPredictions;
 let isPredicting = false;
 let currentFacingMode = 'environment'; // เริ่มต้นใช้กล้องหลัง
@@ -194,21 +194,21 @@ async function predict() {
                 let showInfoButtons = false;
                 let diseaseName = '';
 
-                if (topClassName === "D2") {
+                if (topClassName === "A4") {
                     resultDisplayElement.innerHTML = "<h3>🚨 เป็นโรคจุดราขาว 🚨</h3>";
                     diseaseName = "จุดราขาว";
                     showInfoButtons = true;
-                } else if (topClassName === "D4") {
+                } else if (topClassName === "A2") {
                     resultDisplayElement.innerHTML = "<h3>🚨 เป็นโรคใบไหม้ 🚨</h3>";
                     diseaseName = "ใบไหม้";
                     showInfoButtons = true;
-                } else if (topClassName === "D3") {
-                    resultDisplayElement.innerHTML = "<h3>🚨 เป็นโรคสนิม 🚨</h3>";
-                    diseaseName = "สนิม";
+                } else if (topClassName === "A3") {
+                    resultDisplayElement.innerHTML = "<h3>🚨 เป็นโรคเพลี้ยไฟ 🚨</h3>";
+                    diseaseName = "เพลี้ยไฟ";
                     showInfoButtons = true;
-                } else if (topClassName === "D1") {
+                } else if (topClassName === "A1") {
                     resultDisplayElement.innerHTML = "<h3>✅ ปลอดเชื้อโรค ✅</h3>";
-                } else if (topClassName === "D5") {
+                } else if (topClassName === "A5") {
                     resultDisplayElement.innerHTML = "<h3>🚨 กรุณาถ่ายใหม่ 🚨</h3>";
                 } else {
                     resultDisplayElement.innerHTML = `<h4>💡 โมเดลมั่นใจใน "${topClassName}" มากกว่า 2 วินาที!</h4><p>ความน่าจะเป็น: ${(topProbability * 100).toFixed(1)}%</p>`;

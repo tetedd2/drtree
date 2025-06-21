@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>การรักษาโรคสนิม</title>
-       <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -26,7 +26,7 @@
 
         /* รูปภาพเนื้อหา */
         .content-image {
-            max-width: 25%;
+            max-width: 80%; /* ปรับขนาดรูปภาพให้เหมาะสม */
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -37,25 +37,21 @@
             position: absolute;
             top: 40px;
             left: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: white;
             border-radius: 50%;
             width: 40px;
             height: 40px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-            border: none;
             cursor: pointer;
-            background-color: transparent;
         }
 
         .back-button img {
-            width: 60px;
-            height: 60px;
+            width: 100%; /* รูปภาพเต็มขนาดของปุ่ม */
+            height: 100%; /* รูปภาพเต็มขนาดของปุ่ม */
+            object-fit: contain;
             transition: transform 0.2s ease;
         }
+
         .back-button img:hover {
             transform: scale(1.1);
         }
@@ -65,14 +61,18 @@
             position: absolute;
             top: 40px;
             right: 40px;
-            background-color: transparent;
-            border: none;
+            background-color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
 
         .close-button img {
-            width: 60px;
-            height: 60px;
+            width: 100%; /* รูปภาพเต็มขนาดของปุ่ม */
+            height: 100%; /* รูปภาพเต็มขนาดของปุ่ม */
+            object-fit: contain;
             transition: transform 0.2s ease;
         }
 
