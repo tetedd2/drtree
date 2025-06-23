@@ -49,11 +49,11 @@
       text-decoration: none;
     }
 
-    .btn-top:nth-child(2) {
-      background-color: purple;
+    .btn-top:nth-child(1) {
+      background-color: purple; /* เปลี่ยนเป็นปุ่มแรกแทนที่ของเดิม */
     }
 
-    .btn-top:nth-child(3) {
+    .btn-top:nth-child(2) {
       background-color: green;
     }
 
@@ -66,6 +66,7 @@
       transform: scale(0.98);
     }
 
+    /* ปุ่มแนวนอนด้านล่าง */
     .button-container-bottom {
       display: flex;
       gap: 20px;
@@ -88,6 +89,9 @@
       text-decoration: none;
       flex: 1;
       text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn-bottom:hover {
@@ -125,11 +129,10 @@
   <!-- ข้อความหัวเรื่อง -->
   <h1>กรุณาเลือกระบบ AI ที่ต้องการใช้งาน</h1>
 
-  <!-- กล่องปุ่มบน (แนวตั้ง) -->
+  <!-- กล่องปุ่มบน (แนวตั้ง) - ลบปุ่ม Durian ออกแล้ว -->
   <div class="button-container-top">
-    <a href="AI3.html" class="btn-top">ใช้งาน Durian AI</a>
-    <a href="AI2.html" class="btn-top">ใช้งาน Mangosteen AI</a>
-    <a href="AI1.html" class="btn-top">ใช้งาน Tetedd2 AI</a>
+    <a href="menu1.html" class="btn-top">บัญชี</a>
+    <a href="menu2.html" class="btn-top">คู่มือ</a>
   </div>
 
   <!-- กล่องปุ่มล่าง (แนวนอน) -->

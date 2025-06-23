@@ -13,99 +13,183 @@
     }
 
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: white; /* พื้นหลังสีขาวเต็มจอ */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 50px;
+      justify-content: flex-start;
+      gap: 20px;
+      padding: 40px 20px;
     }
 
     .box-container {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 20px;
+      justify-content: center;
+      width: 100%;
+      max-width: 340px;
     }
 
     .box {
-      width: 300px;
-      height: 150px;
-      border: 2px solid black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .button-container {
-      display: flex;
-      gap: 20px;
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 50px;
-    }
-
-    .btn {
       background-color: white;
-      color: #333;
-      padding: 16px 24px;
-      border-radius: 12px;
-      font-size: 24px;
-      font-weight: bold;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      flex: 1; /* ทำให้ปุ่มมีความกว้างเท่ากัน */
+      padding: 50px;
+      border-radius: 50px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    #weatherBox {
+      background-color: #e0f7ff;
+      border-left: 4px solid #007bff;
+      padding: 20px;
+      width: 100%;
+      max-width: 340px;
       text-align: center;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    #weatherInfo {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #555;
     }
 
-    .btn:active {
-      transform: scale(0.98);
+    /* ป้ายข้อความสวัสดีผู้ใช้ */
+    .greeting-box {
+      position: fixed; /* ให้อยู่มุมซ้ายบนเสมอ */
+      top: 20px;
+      left: 20px;
+      background-color: #fffbe8;
+      border-left: 4px solid #f1c40f;
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      pointer-events: none; /* ห้ามคลิก */
     }
 
-    .btn.home {
-      background-color: #e74c3c;
-      color: white;
+    .greeting-box p {
+      margin: 0;
     }
 
-    .btn.ai {
-      background-color: #2ecc71;
-      color: white;
-    }
+ /* Container ปุ่มด้านล่าง */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* ระยะห่างระหว่างปุ่ม */
+  width: 100%;
+  max-width: 600px;
+  margin-top: auto;
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+}
+
+/* สไตล์ปุ่ม */
+.btn {
+  background-color: white;
+  color: #333;
+  padding: 8px 12px; /* ลด padding ลง */
+  border-radius: 8px; /* ลดความโค้งมนของปุ่ม */
+  font-size: 14px; /* ลดขนาดฟอนต์ */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  flex: 1 1 auto;
+  min-width: 70px; /* กำหนดขนาดขั้นต่ำของปุ่ม */
+  max-width: 100px; /* กำหนดขนาดสูงสุดของปุ่ม */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn.home {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn.ai {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn.plant {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn.menu {
+  background-color: #ff9900;
+  color: white;
+}
+
+/* Responsive for mobile portrait mode */
+@media (max-width: 600px) {
+  .btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    min-width: 60px;
+    max-width: 90px;
+  }
+}
   </style>
 </head>
 <body>
 
-  <!-- กล่องสองช่อง -->
+  <!-- ป้ายข้อความแสดงชื่อ -->
+  <div class="greeting-box" id="greetingBox">
+    <p>🧑‍🌾 <span id="greetingText">สวัสดี</span></p>
+  </div>
+
+  <!-- กล่องข้อมูล -->
   <div class="box-container">
-    <!-- กล่องแรก: ราคาผลไม้ในตลาดกลาง -->
-    <div class="box">ราคาผลไม้ในตลาดกลาง</div>
+   <div class="box" id="priceBox"class="box">
+      <h2>💰 ราคาผลไม้</h2>
+      <p>กำลังโหลด...</p>
+    </div>
+    <div class="box" id="newsBox" class="box">
+      <h2>📰 ข่าวสาร</h2>
+      <p>กำลังโหลด...</p>
+    </div>
 
-    <!-- กล่องที่สอง: พยากรณ์อากาศ -->
-    <div class="box">พยากรณ์อากาศ</div>
+  <!-- กล่องสภาพอากาศ -->
+  <div id="weatherBox" class="box">
+    <h2>🌤️ สภาพอากาศ</h2>
+    <div id="weatherInfo">
+      <p>กำลังโหลด...</p>
+    </div>
   </div>
 
-  <!-- กล่องปุ่ม -->
+  <!-- ปุ่มด้านล่าง -->
   <div class="button-container">
-    <!-- ปุ่ม HOME -->
     <a href="Home999.html" class="btn home">HOME</a>
-
-    <!-- ปุ่ม AI -->
     <a href="Home.html" class="btn ai">AI</a>
-
-    <!-- ปุ่มว่าง -->
-    <div class="btn"></div>
+    <a href="Home555.html" class="btn plant">วิธีปลูก</a>
+    <a href="menu.html" class="btn menu">MENU</a>
   </div>
 
+  <script src="script.js"></script>
+   <script src="server.py"></script>
+  <script src="name.js"></script>
 </body>
 </html>

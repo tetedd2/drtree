@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ระบบตรวจโรคพืช</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: white; /* พื้นหลังสีขาว */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 0;
+    }
+
+    /* Container ปุ่มด้านล่าง */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* ระยะห่างระหว่างปุ่ม */
+  width: 100%;
+  max-width: 600px;
+  margin-top: auto;
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+}
+
+    /* Container สำหรับปุ่มแนวตั้ง (ด้านบน) */
+    .vertical-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 300px;
+    }
+
+   /* สไตล์ปุ่ม */
+.btn {
+  background-color: white;
+  color: #333;
+  padding: 8px 12px; /* ลด padding ลง */
+  border-radius: 8px; /* ลดความโค้งมนของปุ่ม */
+  font-size: 14px; /* ลดขนาดฟอนต์ */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  flex: 1 1 auto;
+  min-width: 70px; /* กำหนดขนาดขั้นต่ำของปุ่ม */
+  max-width: 100px; /* กำหนดขนาดสูงสุดของปุ่ม */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn.home {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn.ai {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn.plant {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn.menu {
+  background-color: #ff9900;
+  color: white;
+}
+
+/* Responsive for mobile portrait mode */
+@media (max-width: 600px) {
+  .btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    min-width: 60px;
+    max-width: 90px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- กล่องปุ่มแนวตั้ง (ด้านบนของหน้าเว็บ) -->
+  <div class="vertical-buttons">
+   <a href="Home2.html" class="btn ai">วิธีปลูก</a>
+
+  <div class="vertical-buttons">
+   <a href="Home3.html" class="btn ai">ดูแล</a>
+
+    <div class="vertical-buttons">
+   <a href="Home4.html" class="btn ai">ประโยชน์</a>
+  </div>
+
+  <!-- กล่องปุ่มแนวนอน (ด้านล่างของหน้าเว็บ) -->
+  <div class="button-container">
+    <a href="Home999.html" class="btn home">HOME</a>
+    <a href="Home.html" class="btn ai">AI</a>
+    <a href="Home555.html" class="btn plant">วิธีปลูก</a>
+    <a href="menu.html" class="btn menu">MENU</a>
+  </div>
+
+</body>
+</html>

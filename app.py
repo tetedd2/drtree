@@ -4,10 +4,9 @@ app = Flask(__name__)
 
 # ข้อมูลผู้ใช้งานที่อนุญาตให้เข้าสู่ระบบได้ (ตัวอย่าง)
 users = {
-    "admin": "1234"
+    "admin": "1234",
     "user": "password"
 }
-
 @app.route('/')
 def home():
     # เมื่อเข้าหน้าแรก ให้ redirect ไปหน้า login
